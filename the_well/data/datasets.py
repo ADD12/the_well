@@ -247,7 +247,7 @@ class WellDataset(Dataset):
         else:
             self.normalization_path = os.path.join(
                 trunk_path,
-                str(normalization_path).removeprefix(str(trunk_path)).lstrip("./"),
+                str(normalization_path).removeprefix(str(trunk_path)).lstrip("./\\"),
             )
 
         self.fs, _ = fsspec.url_to_fs(self.data_path, **(storage_options or {}))
